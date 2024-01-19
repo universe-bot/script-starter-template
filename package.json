@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api-update": "npm-check-updates -u unibot-runtime && npm install"
+    "api-update": "npm-check-updates -u unibot-api && npm install"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.3.3",
-    "unibot-runtime": "^1.2.13"
+    "unibot-api": "^2.0.0"
   }
 }
