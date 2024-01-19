@@ -1,4 +1,4 @@
-type BerryType = ReturnType<typeof GetBerryType>;
+//@ts-nocheck this will be removed shortly as missing types are added to the API
 
 /**
  * Example Script:
@@ -28,10 +28,11 @@ type BerryType = ReturnType<typeof GetBerryType>;
 import { UniCore } from 'unibot-api/UniCore';
 import { UniNavigation } from 'unibot-api/UniNavigation';
 import { NPCShopWindow, PlayerMenu, UniGameUI } from 'unibot-api/UniGameUI';
-import { PLAYER_EQUIP_SLOT } from 'unibot-api/UniPlayer';
+import { PLAYER_EQUIP_SLOT } from 'unibot-api/Types/UniPlayer';
 import type { IVector3 } from 'unibot-api/VectorMath';
 import type { IPlayer, InventoryItem, Material } from 'unibot-api/Types/FlyffEntities';
 import type { UniMover } from 'unibot-api/Types/UniMover';
+
 
 /**
  * Load the required BehaviourModules.
@@ -709,8 +710,8 @@ function FindNearbyBerryBushes() {
 }
 
 function GetBestAvailableHarvestingGloves() {
-    const inventoryGloves = UniCore.GetCurrentPlayer().get("inventory").filter((x: InventoryItem) => x.itemID == ITEMID_HARVESTING_GLOVES);
-    const equippedGloves = UniCore.GetCurrentPlayer().get("equips").filter((x: InventoryItem) => x.itemID == ITEMID_HARVESTING_GLOVES);
+    const inventoryGloves = UniCore.GetCurrentPlayer().Inventory.Items.filter((x: InventoryItem) => x.itemID == ITEMID_HARVESTING_GLOVES);
+    const equippedGloves = UniCore.GetCurrentPlayer().Inventory.Items.filter((x: InventoryItem) => x.itemID == ITEMID_HARVESTING_GLOVES);
 
     const bestGloves = [...inventoryGloves, ...equippedGloves].sort((a, b) => b.upgradeCount - a.upgradeCount)?.at(0);
 
