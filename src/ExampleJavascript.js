@@ -1,4 +1,4 @@
-import { UniCore } from "unibot-runtime/UniCore";
+import { UniCore } from "unibot-api/UniCore";
 const ScriptConfig = UniCore.GetScriptConfig();
 
 const ConfigSections = {
