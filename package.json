@@ -2,15 +2,22 @@
   "name": "samplescriptproject",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api-update": "npm-check-updates -u unibot-api && npm install"
+    "api-update": "npm-check-updates -u unibot-api && npm install",
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.3.3",
-    "unibot-api": "^2.0.0"
-  }
+    "unibot-api": "^2.0.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.9.6",
+    "tslib": "^2.6.2"
+  },
+  "dependencies": {}
 }
